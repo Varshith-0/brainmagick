@@ -69,7 +69,7 @@ class PhonemePulse(Feature):
 
         pulse_len = max(1, int(self.duration_ms * self.sample_rate / 1000))
         convert_to_pulse_count = 0
-        for i in range(samples_num - (pulse_len - 1)):
+        for i in range(samples_num):
             if convert_to_pulse_count > 0:
                 tensor[0, i] = 1
                 convert_to_pulse_count -= 1
